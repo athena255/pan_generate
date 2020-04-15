@@ -57,7 +57,7 @@ func main() {
 
 	defer file.Close()
 	scanner := bufio.NewScanner(file)
-	regexString := `"` + os.Args[1] + `.(\S+)"`
+	regexString := `"` + os.Args[1] + `\.(\S+)"`
 	var definesRegexp *regexp.Regexp = regexp.MustCompile(regexString)
 	for scanner.Scan() {
 		res := definesRegexp.FindStringSubmatch(scanner.Text())
